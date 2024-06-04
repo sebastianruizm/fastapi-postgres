@@ -1,6 +1,19 @@
 # fastapi-postgres
 Lectura y escritura en base de datos Postgres con FastAPI
 
+```mermaid
+flowchart LR
+    U["User"]
+    U-.->|"POST"|F
+    U-->|"GET"|F
+    subgraph D["Docker"]
+        P[("Postgres")]
+        F["FastAPI"]
+        F-.->|"INSERT"|P
+        F-->|"SELECT"|P
+    end
+```
+
 ## Quickstart
 
 En este ejemplo utilicé GitHub Codespaces pero también se puede ejecutar localmente
